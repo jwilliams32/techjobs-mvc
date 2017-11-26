@@ -10,7 +10,7 @@
 
     <h1 th:text="${#strings.capitalizeWords(title)}"></h1>
 
-    <form th:action="@{/search/results}" method="post">
+    <form th:action="@{/search/results}">
         <h2>Search by:</h2>
 
         <p>
@@ -47,9 +47,9 @@
     <table th:each="job : ${jobs}" class="job-listing">
         <tr th:each="someJob :${job}">
             <td th:text="${someJob.key}"></td>
-            <td th:text="${someJob.value}"></td>
+            <td th:text="${someJob.value}"><a th:href="@{/search/results(column=${column},value=${someJob})}" th:text="${someJob}"></a></td>
         </tr>
-            <!--<td><a th:href="@{/search/results(column=${column},value=${someJob})}" th:text="${someJob}"></a></td>-->
+
 
 
     </table>
