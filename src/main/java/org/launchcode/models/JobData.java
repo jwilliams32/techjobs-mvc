@@ -102,13 +102,13 @@ public class JobData {
 
         ArrayList<HashMap<String, String>> jobs = new ArrayList<>();
 
-        for (HashMap<String, String> row : allJobs) {
+        for (HashMap<String, String> job : allJobs) {
 
-            for (String key : row.keySet()) {
-                String aValue = row.get(key);
+            for (String key : job.keySet()) {
+                String aValue = job.get(key);
 
                 if (aValue.toLowerCase().contains(value.toLowerCase())) {
-                    jobs.add(row);
+                    jobs.add(job);
 
                     // Finding one field in a job that matches is sufficient
                     break;
